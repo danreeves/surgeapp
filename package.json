@@ -1,0 +1,18 @@
+{
+  "name": "stagehand",
+  "version": "0.0.0",
+  "description": "",
+  "dependencies": {
+    "menubar": "*",
+    "atom-shell": "0.22.1"
+  },
+  "devDependencies": {
+    "atom-shell-packager": "^1.1.0",
+    "nodemon": "^1.3.7"
+  },
+  "main": "main.js",
+  "scripts": {
+    "build": "atom-shell-packager . Example --ignore=node_modules/atom-shell --icon=Icon.icns",
+    "start": "nodemon --exec 'atom-shell .'"
+  }
+}
