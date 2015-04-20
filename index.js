@@ -1,10 +1,21 @@
+require('es6-promise').polyfill();
+
 var ipc = require('ipc');
-var lol = document.querySelector('#lol');
+var surge = require('./lib/b/surge');
 
-function send (e) {
-    ipc.send('event', {
-        type: 'openDirButton'
+var loginForm = document.querySelector('#login');
+
+
+loginForm.onsubmit = function (e) {
+    e && e.preventDefault();
+
+    surge.login(e.target)
+    .then(function success (d) {
+        loginForm.remove();
+        document.body.innerHTML = 'Logged in!';
+    })
+    .catch(function (e) {
+        console.log('error');
     });
-}
 
-lol.addEventListener('click', send);
+};

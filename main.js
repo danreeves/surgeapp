@@ -4,9 +4,7 @@ var dialog = require('dialog');
 var ipc = require('ipc');
 
 // Internal
-var userDetails = require('./lib/userDetails');
-var appDetails  = require('./lib/appDetails');
-var eventHandlers = require('./lib/eventHandlers');
+var surge = require('./lib/n/surge');
 
 // Declarations
 var mb = menubar();
@@ -18,12 +16,7 @@ var appState = {
 };
 
 mb.on('ready', function ready () {
-
-    appState.userDetails = userDetails.load(appState);
-    appState.appDetails  = appDetails.load(appState);
-
-    ipc.on('event', function handleEvent (event, msg) {
-        eventHandlers[msg.type](msg);
+    ipc.on('surge', function handleEvent (event, msg) {
+        surge[msg.type](event, msg);
     });
-
 });
