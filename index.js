@@ -4,6 +4,7 @@ var ipc = require('ipc');
 var surge = require('./lib/b/surge');
 
 var loginForm = document.querySelector('#login');
+var logout = document.querySelector('#logout');
 var whoami = document.querySelector('#whoami');
 
 
@@ -12,8 +13,7 @@ loginForm.onsubmit = function (e) {
 
     surge.login(e.target)
     .then(function success (d) {
-        loginForm.remove();
-        document.body.innerHTML = 'Logged in!';
+        console.log('logged in as '+d.logged_in_as);
     })
     .catch(function (e) {
         console.log('error');
@@ -29,7 +29,20 @@ whoami.addEventListener('click', function (e) {
         console.log(d.logged_in_as);
     })
     .catch(function (e) {
-        console.log('error', e);
+        console.log('not logged in');
+    })
+
+});
+
+logout.addEventListener('click', function (e) {
+    e && e.preventDefault();
+
+    surge.logout()
+    .then(function (d) {
+        console.log('logged out');
+    })
+    .catch(function (e) {
+        console.log('not logged out');
     })
 
 });
