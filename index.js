@@ -7,7 +7,6 @@ var loginForm = document.querySelector('#login');
 var logout = document.querySelector('#logout');
 var whoami = document.querySelector('#whoami');
 
-
 loginForm.onsubmit = function (e) {
     e && e.preventDefault();
 

@@ -5,10 +5,10 @@
   "dependencies": {
     "atom-shell": "0.22.1",
     "es6-promise": "^2.1.0",
-    "menubar": "*",
+    "menubar": "2.0.10",
     "nexpect": "^0.5.0",
     "suppose": "^0.3.0",
-    "surge": "^0.11.1"
+    "surge": "^0.12.0"
   },
   "devDependencies": {
     "atom-shell-packager": "^1.1.0"

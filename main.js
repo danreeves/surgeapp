@@ -20,3 +20,10 @@ mb.on('ready', function ready () {
         surge[msg.type](event, msg);
     });
 });
+
+// mb.on('after-create-window', function () {
+//     console.log('Window created');
+//     // mb.window.openDevTools({
+//     //     detach: true
+//     // });
+// });
