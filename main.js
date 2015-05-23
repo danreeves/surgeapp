@@ -7,7 +7,10 @@ var ipc = require('ipc');
 var surge = require('./lib/n/surge');
 
 // Declarations
-var mb = menubar();
+var mb = menubar({
+    dir: './',
+    preloadWindow: true
+});
 var appState = {
     currentDir: undefined,
     userDetails: undefined,
@@ -21,9 +24,9 @@ mb.on('ready', function ready () {
     });
 });
 
-// mb.on('after-create-window', function () {
-//     console.log('Window created');
-//     // mb.window.openDevTools({
-//     //     detach: true
-//     // });
-// });
+mb.on('after-create-window', function () {
+    console.log('Window created');
+    mb.window.openDevTools({
+        detach: true
+    });
+});

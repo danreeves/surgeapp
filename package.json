@@ -5,6 +5,7 @@
   "dependencies": {
     "atom-shell": "0.22.1",
     "es6-promise": "^2.1.0",
+    "jquery": "^2.1.4",
     "menubar": "2.0.10",
     "nexpect": "^0.5.0",
     "suppose": "^0.3.0",
