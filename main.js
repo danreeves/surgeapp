@@ -8,6 +8,7 @@ var surge = require('./lib/n/surge');
 
 // Declarations
 var mb = menubar({
+    height: 338,
     dir: './',
     preloadWindow: true
 });
@@ -24,8 +25,9 @@ mb.on('ready', function ready () {
     });
 });
 
-mb.on('after-create-window', function () {
-    console.log('Window created');
+
+// DEBUG
+mb.on('after-show', function () {
     mb.window.openDevTools({
         detach: true
     });

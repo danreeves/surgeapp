@@ -1,80 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Flat UI Free 101 Template</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Loading Bootstrap -->
-    <link href="flatui/css/vendor/bootstrap.min.css" rel="stylesheet">
-    <!-- Loading Flat UI -->
-    <link href="flatui/css/flat-ui.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="img/favicon.ico">
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
-    <!--[if lt IE 9]>
-      <script src="js/vendor/html5shiv.js"></script>
-      <script src="js/vendor/respond.min.js"></script>
-    <![endif]-->
-    <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
-    <script>window.$ = window.jQuery = require('jquery');</script>
-    <script src="flatui/js/flat-ui.min.js"></script>
-  </head>
-  <body>
+    <head>
+        <meta charset="utf-8">
+        <title>Surge app</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Loading Bootstrap -->
+        <link href="flatui/css/vendor/bootstrap.min.css" rel="stylesheet">
+        <!-- Loading Flat UI -->
+        <link href="flatui/css/flat-ui.min.css" rel="stylesheet">
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+        <!--[if lt IE 9]>
+            <script src="js/vendor/html5shiv.js"></script>
+            <script src="js/vendor/respond.min.js"></script>
+        <![endif]-->
+        <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
+        <script>
+            window.$ = window.jQuery = require('jquery');
+            document.addEventListener('mousewheel', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }, false);
+        </script>
+        <script src="flatui/js/flat-ui.min.js"></script>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
 
-    <!-- Static navbar -->
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-          </button>
-          <a class="navbar-brand" href="">Surge</a>
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+            <div class="navbar-header">
+                <span class="navbar-brand" style="color:white !important;">Surge</span>
+            </div>
+            <div class="collapse navbar-collapse">
+                <p class="navbar-text navbar-right"><a id="logout" class="navbar-link" href="#">Log out</a></p>
+            </div>
+        </nav>
+
+        <div class="container">
+            <form class="login-form" id="login">
+                <div class="form-group">
+                  <input autofocus required type="email" class="form-control login-field" placeholder="Enter your email" name="email">
+                  <label class="login-field-icon fui-user" for="login-name"></label>
+                </div>
+
+                <div class="form-group">
+                  <input required type="password" class="form-control login-field" placeholder="Password" name="password">
+                  <label class="login-field-icon fui-lock" for="login-pass"></label>
+                </div>
+
+                <button class="btn btn-primary btn-lg btn-block">Log in</button>
+                <a class="login-link" href="#">Lost your password?</a>
+            </form>
         </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="../navbar/">Default</a></li>
-            <li class="active"><a href="./">Static top</a></li>
-            <li><a href="../navbar-fixed-top/">Fixed top</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-
-    <div class="container">
-
-      <form id="login">
-      <label>
-      Email:
-      <input type="email" required />
-      </label>
-      <label>
-      Password:
-      <input type="password" required />
-      </label>
-      <button class="btn btn-primary">Log in</button>
-      </form>
-      <button id="logout" class="btn btn-default">Log out</button>
-      <button id="whoami" class="btn btn-default">Who am I?</button>
-
-    </div>
-    <!-- /.container -->
-    <!-- My stuff -->
-    <script src="index.js"></script>
-  </body>
+        <!-- /.container -->
+        <!-- My stuff -->
+        <script src="index.js"></script>
+    </body>
 </html>

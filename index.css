@@ -1,0 +1,34 @@
+.navbar-collapse {
+    display: block!important;
+    height: auto!important;
+    overflow: visible!important;
+    /*padding: 0 !important;*/
+    /*float: left !important;*/
+    border-width: 0 !important;
+}
+.navbar-header {
+    float: left;
+}
+.navbar-collapse li {
+    float: left;
+}
+.navbar-nav {
+    margin: 0;
+}
+.navbar-nav > li > a {
+    padding: 15px 21px;
+}
+.navbar-right {
+  float: right!important;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+
+input:focus:invalid {
+    border-color: #e74c3c !important;
+}
