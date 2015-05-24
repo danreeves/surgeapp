@@ -44,6 +44,3 @@ logout.addEventListener('click', function (e) {
     })
 
 });
-
-
-jQuery = 'jQuery';
