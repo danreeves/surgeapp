@@ -32,3 +32,35 @@ body {
 input:focus:invalid {
     border-color: #e74c3c !important;
 }
+
+#slider {
+    width: 400px;
+    overflow: hidden;
+}
+.slides {
+    height: 360px;
+    width: 9999px;
+    transition: all .4s ease-in-out;
+}
+.slides .container {
+    width: 400px;
+    height: 360px;
+    display: block;
+    float: left;
+}
+
+.slider--1 .slides {
+    transform: translateX(-400px);
+}
+.slider--2 .slides {
+     transform: translateX(-800px);
+}
+.slider--3 .slides {
+     transform: translateX(-1200px);
+}
+.slider--4 .slides {
+     transform: translateX(-1600px);
+}
+.slider--5 .slides {
+     transform: translateX(-2000px);
+}

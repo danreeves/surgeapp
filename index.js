@@ -1,46 +1,20 @@
 require('es6-promise').polyfill();
+require('./lib/b/each');
 
 var ipc = require('ipc');
 var surge = require('./lib/b/surge');
 
-var loginForm = document.querySelector('#login');
-var logout = document.querySelector('#logout');
-// var whoami = document.querySelector('#whoami');
+var loginForm = require('./lib/b/loginForm');
+var logoutButton = require('./lib/b/logoutButton');
 
-loginForm.onsubmit = function (e) {
-    e && e.preventDefault();
-    surge.login(e.target)
-    .then(function success (d) {
-        console.log('logged in as '+d.logged_in_as);
-    })
-    .catch(function (e) {
-        console.log('error');
-    });
+logoutButton();
+loginForm();
 
-};
-
-// whoami.addEventListener('click', function (e) {
-//     e && e.preventDefault();
-
-//     surge.whoami()
-//     .then(function success (d) {
-//         console.log(d.logged_in_as);
-//     })
-//     .catch(function (e) {
-//         console.log('not logged in');
-//     })
-
-// });
-
-logout.addEventListener('click', function (e) {
-    e && e.preventDefault();
-
-    surge.logout()
-    .then(function (d) {
-        console.log('logged out');
-    })
-    .catch(function (e) {
-        console.log('not logged out');
-    })
-
+// Test if already logged in
+surge.whoami()
+.then(function (msg) {
+    console.log(msg.logged_in_as);
+})
+.catch(function (msg) {
+    console.log('not logged in yet');
 });

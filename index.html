@@ -35,25 +35,32 @@
                 <p class="navbar-text navbar-right"><a id="logout" class="navbar-link" href="#">Log out</a></p>
             </div>
         </nav>
+        <div id="slider">
+            <div class="slides">
+                <div class="container container--login">
+                    <form class="login-form" id="login">
+                        <div class="form-group">
+                          <input autofocus required type="email" class="form-control login-field" placeholder="Enter your email" name="email">
+                          <label class="login-field-icon fui-user" for="login-name"></label>
+                        </div>
 
-        <div class="container">
-            <form class="login-form" id="login">
-                <div class="form-group">
-                  <input autofocus required type="email" class="form-control login-field" placeholder="Enter your email" name="email">
-                  <label class="login-field-icon fui-user" for="login-name"></label>
+                        <div class="form-group">
+                          <input required type="password" class="form-control login-field" placeholder="Password" name="password">
+                          <label class="login-field-icon fui-lock" for="login-pass"></label>
+                        </div>
+
+                        <button class="btn btn-primary btn-lg btn-block">Log in</button>
+                        <a class="login-link" href="#">Lost your password?</a>
+                    </form>
                 </div>
 
-                <div class="form-group">
-                  <input required type="password" class="form-control login-field" placeholder="Password" name="password">
-                  <label class="login-field-icon fui-lock" for="login-pass"></label>
+                <div class="container container--start">
+                    <p>Open project: <button class="btn btn-primary">Open</button></p>
                 </div>
-
-                <button class="btn btn-primary btn-lg btn-block">Log in</button>
-                <a class="login-link" href="#">Lost your password?</a>
-            </form>
+            </div>
         </div>
-        <!-- /.container -->
-        <!-- My stuff -->
+
+
         <script src="index.js"></script>
     </body>
 </html>
