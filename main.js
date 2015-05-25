@@ -27,7 +27,7 @@ mb.on('ready', function ready () {
 
 
 // DEBUG
-mb.on('after-create-window', function () {
+mb.on('after-open', function () {
     mb.window.openDevTools({
         detach: true
     });

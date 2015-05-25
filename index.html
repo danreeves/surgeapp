@@ -32,6 +32,7 @@
                 <span class="navbar-brand" style="color:white !important;">Surge</span>
             </div>
             <div class="collapse navbar-collapse">
+                <button class="btn btn-default navbar-btn btn-xs" type="button">Select project..</button>
                 <p class="navbar-text navbar-right"><a id="logout" class="navbar-link" href="#">Log out</a></p>
             </div>
         </nav>
@@ -54,8 +55,24 @@
                     </form>
                 </div>
 
-                <div class="container container--start">
-                    <p>Open project: <button class="btn btn-primary">Open</button></p>
+                <div class="container">
+                    <form>
+                        <legend>Get started</legend>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">Select project...</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="container">
+                    <form role="form">
+                        <p>../surgeapp/example/lol</p>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Custom domain</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Push</button>
+                    </form>
                 </div>
             </div>
         </div>
