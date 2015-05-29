@@ -5,6 +5,7 @@ var ipc = require('ipc');
 
 // Internal
 var surge = require('./lib/n/surge');
+var actions = require('./lib/n/actions');
 
 // Declarations
 var mb = menubar({
@@ -12,23 +13,24 @@ var mb = menubar({
     dir: './',
     preloadWindow: true
 });
-var appState = {
-    currentDir: undefined,
-    userDetails: undefined,
-    appDetails: undefined,
-    running: false
+var app = {
+    surge: require('./lib/n/surge'),
+    actions: require('./lib/n/actions')
 };
 
 mb.on('ready', function ready () {
     ipc.on('surge', function handleEvent (event, msg) {
-        surge[msg.type](event, msg);
+        app.surge[msg.type](event, msg);
     });
+    ipc.on('action', function handleAction (event, msg) {
+        app.actions[msg.type](event, msg);
+    })
 });
 
 
 // DEBUG
-mb.on('after-open', function () {
-    mb.window.openDevTools({
-        detach: true
-    });
+mb.on('after-show', function () {
+    // mb.window.openDevTools({
+    //     detach: true
+    // });
 });

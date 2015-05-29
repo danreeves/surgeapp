@@ -4,19 +4,13 @@
         <meta charset="utf-8">
         <title>Surge app</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Loading Bootstrap -->
         <link href="flatui/css/vendor/bootstrap.min.css" rel="stylesheet">
-        <!-- Loading Flat UI -->
         <link href="flatui/css/flat-ui.min.css" rel="stylesheet">
         <link rel="shortcut icon" href="img/favicon.ico">
-        <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
-        <!--[if lt IE 9]>
-            <script src="js/vendor/html5shiv.js"></script>
-            <script src="js/vendor/respond.min.js"></script>
-        <![endif]-->
-        <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
         <script>
+            // Global jQuery (atom has exposes module, making jquery run as a commonjs module)
             window.$ = window.jQuery = require('jquery');
+            // Prevent scrolling
             document.addEventListener('mousewheel', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
@@ -32,8 +26,8 @@
                 <span class="navbar-brand" style="color:white !important;">Surge</span>
             </div>
             <div class="collapse navbar-collapse">
-                <button class="btn btn-default navbar-btn btn-xs" type="button">Select project..</button>
-                <p class="navbar-text navbar-right"><a id="logout" class="navbar-link" href="#">Log out</a></p>
+                <button class="btn btn-default navbar-btn btn-xs js-select-project" type="button">Select project..</button>
+                <p class="navbar-text navbar-right"><a class="navbar-link js-logout" href="#">Log out</a></p>
             </div>
         </nav>
         <div id="slider">
@@ -59,17 +53,25 @@
                     <form>
                         <legend>Get started</legend>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-lg btn-block">Select project...</button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block js-select-project">Select project...</button>
+                            <br>
+                            <p class="help-block">Point Surge at your project directory and we'll begin. If you need any help with using Surge you can visit the <a href="https://surge.sh/help" target="_blank">docs</a>.</p>
                         </div>
                     </form>
                 </div>
 
                 <div class="container">
+                    <!-- Blank -->
+                </div>
+
+                <div class="container">
                     <form role="form">
-                        <p>../surgeapp/example/lol</p>
+                        <legend id="project">[project filepath]</legend>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Custom domain</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                            <label for="domain">Custom domain</label>
+                            <input type="text" class="form-control" id="domain" name="domain" placeholder="example.surge.sh">
+                            <p class="help-block js-domain-empty">Surge will generate a free surge.sh subdomain</p>
+                            <p class="help-block js-cname-detected">CNAME file detected</p>
                         </div>
                         <button type="submit" class="btn btn-primary btn-lg btn-block">Push</button>
                     </form>

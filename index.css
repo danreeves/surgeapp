@@ -72,3 +72,21 @@ input:focus:invalid {
 .slider--5 .slides {
      transform: translateX(-2000px);
 }
+
+.js-select-project,
+.js-logout {
+  opacity: 0;
+  transform: translateY(-40px);
+  transition: all 0.2s;
+}
+
+.logged-in .js-select-project,
+.logged-in .js-logout {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.js-domain-empty,
+.js-cname-detected {
+  display: none;
+}
