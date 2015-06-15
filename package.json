@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "description": "",
   "dependencies": {
-    "atom-shell": "0.22.1",
     "es6-promise": "^2.1.0",
     "jquery": "^2.1.4",
     "menubar": "2.0.10",
@@ -13,11 +12,11 @@
   },
   "devDependencies": {
     "electron-packager": "^4.1.2",
-    "electron-prebuilt": "^0.26.1"
+    "electron-prebuilt": "^0.27.3"
   },
   "main": "main.js",
   "scripts": {
-    "build": "electron-packager ./ Surge --platform=darwin --arch=x64 --version=0.27.1",
+    "build": "electron-packager ./ Surge --platform=darwin --arch=x64 --version=0.27.3",
     "start": "electron ."
   }
 }
