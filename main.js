@@ -3,14 +3,14 @@ var menubar = require('menubar');
 var dialog = require('dialog');
 var ipc = require('ipc');
 
-// Internal
+// // Internal
 var surge = require('./lib/n/surge');
 var actions = require('./lib/n/actions');
 
 // Declarations
 var mb = menubar({
+    dir: __dirname,
     height: 338,
-    dir: './',
     preloadWindow: true
 });
 var app = {
@@ -29,8 +29,8 @@ mb.on('ready', function ready () {
 
 
 // DEBUG
-mb.on('after-show', function () {
+// mb.on('after-show', function () {
     // mb.window.openDevTools({
     //     detach: true
     // });
-});
+// });
