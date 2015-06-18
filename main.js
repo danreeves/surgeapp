@@ -1,3 +1,5 @@
+global.appRoot = __dirname;
+
 // External
 var menubar = require('menubar');
 var dialog = require('dialog');
